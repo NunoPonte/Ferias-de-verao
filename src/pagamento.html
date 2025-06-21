@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Férias De Verão CMVC</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../src/css/styles-pagamento.css" />
+  </head>
+  <body>
+    <div class="payment-container">
+        <h2>Instruções de pagamento</h2>
+        <img src="/public/mbway.png" alt="MB WAY" class="mbway-logo">
+        <div class="payment-details">
+            <p><strong>Nº de inscrição</strong></p>
+            <p class="highlight">9595666</p>
+            <p><strong>Total a pagar</strong></p>
+            <p class="highlight">340€</p>
+        </div>
+        <p class="instructions">
+            Receberá uma notificação na aplicação MB WAY para que confirme o pagamento utilizando o seu PIN MB WAY.
+            <br>
+            Após completar esta confirmação, o pagamento está concluído.
+        </p>
+        <form class="contact-form">
+            <label for="contact">Inserir contacto MB WAY</label>
+            <input type="text" id="contact" placeholder="Contacto">
+            <button type="submit" disabled>Confirmar</button>
+        </form>
+    </div>
+</body>
+</html>

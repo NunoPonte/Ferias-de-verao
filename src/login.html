@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Férias De Verão CMVC</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../src/css/styles-login.css" />
+  </head>
+  <body>
+    <div class="header-placeholder"></div>
+    <div
+      class="d-flex align-items-center justify-content-between flex-wrap gap-2 header-container"
+    >
+      <div class="container">
+        <div class="d-flex justify-content-between text-center flex-wrap gap-2">
+          <button class="btn header-btn">INÍCIO</button>
+          <button class="btn header-btn">ATIVIDADES</button>
+          <button class="btn header-btn">PREÇOS</button>
+          <button class="btn header-btn">COMO INSCREVER</button>
+          <button class="btn header-btn">ESCOLAS</button>
+        </div>
+      </div>
+      <button class="header-button btn" onclick="toggleHeaderDisplay()">
+        <svg
+          id="toggleIcon"
+          style="width: 2.75rem; height: 2.75rem"
+          viewBox="0 0 44 44"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="44" height="44" rx="12" fill="#212121" />
+          <g id="icon" transform="translate(10,10)">
+            <path
+              d="M5 6H19M5 12H19M5 18H19"
+              stroke="#FEFEFE"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </g>
+        </svg>
+      </button>
+      <script>
+        let isHamburger = true;
+
+        function toggleHeaderDisplay() {
+          const headerContainer = document.querySelector(".header-container");
+          const headerBtns = document.querySelectorAll(".header-btn");
+          const toggleIcon = document.getElementById("toggleIcon");
+          const iconGroup = document.getElementById("icon");
+
+          if (headerContainer) {
+            headerContainer.style.backgroundColor =
+              headerContainer.style.backgroundColor === "" ? "#212121" : "";
+            headerContainer.style.transition = "background-color 0.5s ease";
+          }
+
+          headerBtns.forEach((headerBtn) => {
+            headerBtn.style.visibility =
+              headerBtn.style.visibility === "" ? "visible" : "";
+          });
+
+          if (isHamburger) {
+            iconGroup.innerHTML = `<path d="M20 20L4 4M20 4L4 20" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round"/>`;
+          } else {
+            iconGroup.innerHTML = `<path d="M5 6H19M5 12H19M5 18H19" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round"/>`;
+          }
+
+          isHamburger = !isHamburger;
+        }
+      </script>
+    </div>
+    <div class="container login-container">
+        <div class="row">
+            <div class="col-12 col-md-6 d-flex flex-column">
+            <div>
+                <a href="index.html">
+                    <img class="arrow" src="/public/arrow2.png" alt="Voltar" />
+                    Voltar
+                </a>
+            </div>
+            </div>
+        </div>
+        <img
+            src="/public/BannerHomeSideImg.svg"
+            alt="Banner Home Side Image"
+            class="banner-side-img"
+        />
+        <div class="row">
+            <div class="col-12 col-md-8 d-flex flex-column">
+                <div
+                    id="inicio"
+                    class="carousel slide carousel-fade"
+                    data-bs-ride="carousel"
+                    >
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="100">
+                        <img
+                            src="/public/BannerHome1.svg"
+                            class="d-block w-100"
+                            alt="Banner Home 1"
+                        />
+                        </div>
+                        <div class="carousel-item" data-bs-interval="5000">
+                        <img
+                            src="/public/BannerHome2.svg"
+                            class="d-block w-100"
+                            alt="Banner Home 2"
+                        />
+                        </div>
+                        <div class="carousel-item" data-bs-interval="5000">
+                        <img
+                            src="/public/BannerHome3.svg"
+                            class="d-block w-100"
+                            alt="Banner Home 3"
+                        />
+                        </div>
+                        <div class="carousel-item" data-bs-interval="5000">
+                        <img
+                            src="/public/BannerHome4.svg"
+                            class="d-block w-100"
+                            alt="Banner Home 4"
+                        />
+                        </div>
+                        <div class="carousel-item" data-bs-interval="5000">
+                        <img
+                            src="/public/BannerHome5.svg"
+                            class="d-block w-100"
+                            alt="Banner Home 5"
+                        />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 d-flex flex-column login-container2">
+                <div class="btn-group btn-group-toggle" role="group" aria-label="Escolha Ação">
+                  <button type="button" class="btn btn-left active registar-btn" onclick="toggleForm('registar')">Registar</button>
+                  <button type="button" class="btn btn-right registar-btn" onclick="toggleForm('entrar')">Entrar</button>
+                </div>
+                <form>
+                  <div class="form-group formulario">
+                    <div class="formulario-title" id="form-title">
+                        Dados do encarregado de educação
+                      </div>
+                      <input type="text" class="form-control toggle-field" id="nome-completo" placeholder="Nome Completo" />
+                      <input type="text" class="form-control toggle-field" id="morada" placeholder="Morada" />
+                      <input type="tel" class="form-control toggle-field" id="contacto" placeholder="Contacto" />
+                      <input type="email" class="form-control" id="email" placeholder="E-mail" />
+                      <input type="password" class="form-control pr-5" id="password" placeholder="Password" />
+                      <span class="toggle-password-icon" onclick="togglePassword()">
+                        <img src="/public/eye-slash.svg" alt="Mostrar senha">
+                      </span>
+                      <div class="preenchimento" id="info-obrigatorio">
+                        * Campos de preenchimento obrigatório
+                      </div>
+                      <a href="#" class="preenchimento d-none" id="info-entrar">
+                        Recuperar password?
+                      </a>
+                      <a href="area-educandos.html" id="submit-btn" class="btn-registar">Registar</a>
+                  </div>
+                </form>
+              </div>              
+        </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+
+        function toggleForm(mode) {
+        const fieldsToToggle = document.querySelectorAll('.toggle-field');
+        const title = document.getElementById('form-title');
+        const btn = document.getElementById('submit-btn');
+        const infoObrigatorio = document.getElementById('info-obrigatorio');
+        const infoEntrar = document.getElementById('info-entrar');
+        const togglePasswordIcon = document.querySelector('.toggle-password-icon');
+
+        if (mode === 'entrar') {
+            fieldsToToggle.forEach(field => field.classList.add('hide'));
+            btn.textContent = 'Entrar';
+            infoEntrar.classList.remove('d-none');
+
+            if (title) {
+            title.remove();
+            }
+
+            btn.style.marginTop = '0';
+            if (togglePasswordIcon) {
+            togglePasswordIcon.style.top = '35%';
+            togglePasswordIcon.style.right = '20%';
+            }
+        } else {
+            fieldsToToggle.forEach(field => field.classList.remove('hide'));
+            btn.textContent = 'Registar';
+            infoObrigatorio.style.display = 'block';
+            infoEntrar.classList.add('d-none');
+
+            if (!document.getElementById('form-title')) {
+            const formGroup = document.querySelector('.form-group');
+            const newTitle = document.createElement('div');
+            newTitle.className = 'formulario-title';
+            newTitle.id = 'form-title';
+            newTitle.textContent = 'Dados do encarregado de educação';
+            formGroup.insertBefore(newTitle, formGroup.firstChild);
+            }
+
+            btn.style.marginTop = '20px';
+            if (togglePasswordIcon) {
+            togglePasswordIcon.style.top = '68%';
+            togglePasswordIcon.style.right = '20%';
+            }
+        }
+
+        document.querySelectorAll('.btn-group .btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`.btn-group .btn-${mode === 'entrar' ? 'right' : 'left'}`).classList.add('active');
+        }
+
+        function togglePassword() {
+        const input = document.getElementById("password");
+        input.type = input.type === "password" ? "text" : "password";
+        }
+
+
+      function injectSvg(id, path) {
+        fetch(path)
+          .then((res) => {
+            if (!res.ok) {
+              throw new Error(`HTTP error! status: ${res.status}`);
+            }
+            return res.text();
+          })
+          .then((svg) => {
+            const element = document.getElementById(id);
+            if (element) {
+              element.innerHTML = svg;
+            } else {
+              console.error(`Element with id "${id}" not found.`);
+            }
+          })
+          .catch((err) => console.error("Error fetching SVG:", err));
+      }
+      document.addEventListener("DOMContentLoaded", () => {
+        const headerContainer = document.querySelector(".header-container");
+        const headerPlaceholder = document.querySelector(".header-placeholder");
+        const headerButtonImg = document.querySelector(".header-button");
+        const carousel = document.querySelector("#inicio");
+
+        if (!carousel || !headerButtonImg) {
+          console.error("Required elements not found!");
+          return;
+        }
+
+        const headerObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                headerContainer.classList.remove("carousel-hidden-header");
+                headerPlaceholder.classList.remove(
+                  "carousel-hidden-header-placeholder"
+                );
+              } else {
+                headerContainer.classList.add("carousel-hidden-header");
+                headerPlaceholder.classList.add(
+                  "carousel-hidden-header-placeholder"
+                );
+              }
+            });
+          },
+          { threshold: 0 }
+        );
+
+        headerObserver.observe(carousel);
+
+        const images = document.querySelectorAll(".atividades-container img");
+
+        const imageObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const title = entry.target.closest(".row").querySelector("h2");
+                const body = entry.target.closest(".row").querySelector("p");
+                if (title) {
+                  title.classList.add("slide-in");
+                }
+                if (body) {
+                  body.classList.add("fade-in");
+                }
+              }
+            });
+          },
+          { threshold: 1 }
+        );
+
+        images.forEach((image) => imageObserver.observe(image));
+        injectSvg("regulamento", "/public/Regulamento.svg");
+        injectSvg("passosInscricao", "/public/PassosDeInscricao.svg");
+        injectSvg("inscricaoButton", "/public/FazerInscricao.svg");
+        injectSvg("inscricaoButton2", "/public/FazerInscricao.svg");
+        injectSvg("butao-up", "/public/ButaoUp.svg");
+      });
+
+        document.querySelectorAll('.btn-group-toggle .btn').forEach(button => {
+        button.addEventListener('click', () => {
+            button.parentElement.querySelectorAll('.btn').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        });
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,283 @@
+.header-container {
+    background-color: transparent;
+    height: 80px;
+    width: 100%;
+    position: relative;
+    z-index: 500;
+  }
+  .header-btn {
+    all: unset;
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    visibility: hidden;
+  }
+  .header-btn:hover,
+  .header-btn:active,
+  .header-btn:focus {
+    color: white !important;
+    border: none !important;
+  }
+  .header-button {
+    background: none;
+    border: none;
+    float: right;
+    margin-right: 2rem;
+    z-index: 1000;
+  }
+  
+  .header-button-img {
+    max-width: 100%;
+    height: auto;
+    transition: filter 0.3s ease;
+  }
+
+  body{
+    overflow-y: hidden;
+  }
+
+div a {
+    display: flex;
+    text-align: left;
+    align-items: left; 
+    text-decoration: none; 
+    color: #656565; 
+    margin-left: 2%; 
+    margin-top: 2%;
+  }
+  
+  .atividades2-container .arrow {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px; 
+    vertical-align: middle;
+  }
+  
+  .atividades2-container h1{
+    font-size: 8rem;
+    opacity: 0.1;
+    font-weight: 700;
+    
+  }
+  
+  .desportos{
+    line-height: 1.5;
+    color: #656565;
+    font-weight: bold;
+  }
+
+  .desporto {
+    position: relative;
+    display: block; /* em vez de inline-block */
+    cursor: pointer;
+    padding: 5px 0;
+  }
+  
+  .desporto::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 0%;
+    background-color: #4fc3f7;
+    transition: width 0.3s ease;
+  }
+  
+  .desporto:hover::after,
+  .desporto.selected::after {
+    width: 10%; /* ou 100% se quiser o sublinhado completo */
+  }
+  
+  
+  .img-desporto{
+    width: 395px;
+    height: 168px;
+    flex-direction: column;
+    right: 0;
+  }
+
+  
+  .desportos div {
+    cursor: pointer;
+    padding: 8px 12px;
+    margin: 4px 0;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .titulo-desporto{
+    font-size: 1.7rem;
+    margin-top: 2%;
+    margin-left: 5%;
+  }
+  
+  .texto-desporto{
+    font-size: 1rem;
+    line-height: 1.2;
+    margin-top: 5%;
+    margin-left: 5%;
+    font-weight: normal;
+  }
+
+
+@media (max-width: 900px) {
+  .header-container {
+    height: auto;
+    padding: 10px;
+  }
+
+  .header-btn {
+    font-size: 1rem;
+    visibility: visible;
+    display: block;
+    text-align: center;
+    margin: 5px 0;
+  }
+
+  .header-button {
+    margin-right: 1rem;
+  }
+
+  .atividades2-container h1 {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .desportos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-height: 100px;
+  }
+
+  .desporto {
+    flex: 1 1 45%; 
+    margin: 5px;
+  }
+
+  .desportos-img {
+    flex: 1 1 45%; 
+    margin: 5px;
+    overflow-y: hidden;
+  }
+
+  .img-desporto {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
+
+  .desporto-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .atividades2-container .desportos{
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 346px; /* Ajuste conforme necessário */
+  }
+
+  .texto-desporto {
+    flex: 1;
+    text-align: left;
+    margin-right: 10px;
+  }
+
+  .img-desporto {
+    flex: 0 0 40%; /* A imagem ocupa 40% da largura */
+    margin-left: 10px;
+  }
+
+  div a {
+    font-size: 0.9rem;
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  body{
+    overflow-y: auto;
+  }
+
+  .atividades2-container{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    line-height: 1.2;
+  }
+
+  .desportos div {
+    flex: 1; 
+    text-align: left;
+  }
+
+  .img-desporto {
+    flex: 0 0 40%; 
+    max-width: 100%;
+    height: auto;
+  }
+  .desportos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .desportos div {
+    margin: 5px 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .desportos-img {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .img-desporto {
+    width: 342px;
+    height: 116px;
+  }
+
+  .titulo-desporto {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+
+  .texto-desporto {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+
+  .row-desportos {
+    flex-direction: column; /* Inverte a ordem: esportes em cima, imagem embaixo */
+  }
+
+  .desportos {
+    margin-bottom: 20px; /* Espaçamento entre esportes e imagem */
+  }
+
+  .desportos-img {
+    text-align: center; /* Centraliza a imagem e o texto */
+  }
+
+  .img-desporto {
+    width: 342px;
+    height: 116px;
+  }
+
+  .titulo-desporto {
+    font-size: 1.5rem; /* Ajusta o tamanho do título */
+    margin-top: 10px;
+  }
+
+  .texto-desporto {
+    font-size: 1rem; /* Ajusta o tamanho do texto */
+    margin-top: 10px;
+  }
+}

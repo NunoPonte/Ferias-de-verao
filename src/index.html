@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Férias De Verão CMVC</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../src/css/styles-index.css" />
+  </head>
+  <body>
+    <img src="/public/img.png" alt="Blue Decoration" class="asterisco-img" />
+    <img src="/public/blue.png" alt="Blue Decoration" class="blue-img" />
+    <img src="/public/blue2.png" alt="Blue Decoration" class="blue2-img" />
+    <img src="/public/red.png" alt="Red Decoration" class="red-img" />
+    <img src="/public/yellow.png" alt="Yellow Decoration" class="yellow-img" />
+    <img
+      src="/public/yellow2.png"
+      alt="Yellow Decoration"
+      class="yellow2-img"
+    />
+
+    <div
+      id="inicio"
+      class="carousel slide carousel-fade"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="5000">
+          <picture>
+            <source
+              srcset="/public/BannerHome1Mobile.svg"
+              media="(max-width: 768px)"
+            />
+            <img
+              src="/public/BannerHome1.svg"
+              class="d-block w-100"
+              alt="Banner Home 1"
+            />
+          </picture>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <picture>
+            <source
+              srcset="/public/BannerHome2Mobile.svg"
+              media="(max-width: 768px)"
+            />
+            <img
+              src="/public/BannerHome2.svg"
+              class="d-block w-100"
+              alt="Banner Home 1"
+            />
+          </picture>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <picture>
+            <source
+              srcset="/public/BannerHome3Mobile.svg"
+              media="(max-width: 768px)"
+            />
+            <img
+              src="/public/BannerHome3.svg"
+              class="d-block w-100"
+              alt="Banner Home 1"
+            />
+          </picture>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <picture>
+            <source
+              srcset="/public/BannerHome4Mobile.svg"
+              media="(max-width: 768px)"
+            />
+            <img
+              src="/public/BannerHome4.svg"
+              class="d-block w-100"
+              alt="Banner Home 1"
+            />
+          </picture>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <picture>
+            <source
+              srcset="/public/BannerHome5Mobile.svg"
+              media="(max-width: 768px)"
+            />
+            <img
+              src="/public/BannerHome5.svg"
+              class="d-block w-100"
+              alt="Banner Home 1"
+            />
+          </picture>
+        </div>
+      </div>
+    </div>
+    <div class="header-placeholder"></div>
+    <div
+      class="d-flex align-items-center justify-content-between flex-wrap gap-2 header-container"
+    >
+      <div class="container">
+        <div class="d-flex justify-content-between flex-wrap gap-2">
+          <button class="btn header-btn" data-target="inicio">INÍCIO</button>
+          <button class="btn header-btn" data-target="atividades">
+            ATIVIDADES
+          </button>
+          <button class="btn header-btn" data-target="precos">PREÇOS</button>
+          <button class="btn header-btn" data-target="como-inscrever">
+            COMO INSCREVER
+          </button>
+          <button class="btn header-btn" data-target="escolas">ESCOLAS</button>
+        </div>
+      </div>
+      <button class="header-button btn" onclick="toggleHeaderDisplay()">
+        <svg
+          id="toggleIcon"
+          style="width: 2.75rem; height: 2.75rem"
+          viewBox="0 0 44 44"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="44" height="44" rx="12" fill="#212121" />
+          <g id="icon" transform="translate(10,10)">
+            <path
+              d="M5 6H19M5 12H19M5 18H19"
+              stroke="#FEFEFE"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </g>
+        </svg>
+      </button>
+
+      <script>
+        let isHamburger = true;
+
+        function toggleHeaderDisplay() {
+          const headerContainer = document.querySelector(".header-container");
+          const headerBtns = document.querySelectorAll(".header-btn");
+          const toggleIcon = document.getElementById("toggleIcon");
+          const iconGroup = document.getElementById("icon");
+
+          if (headerContainer) {
+            headerContainer.style.backgroundColor =
+              headerContainer.style.backgroundColor === "" ? "#212121" : "";
+            headerContainer.style.transition = "background-color 0.5s ease";
+          }
+
+          headerContainer.classList.toggle("hidden-header-mobile");
+
+          headerBtns.forEach((headerBtn) => {
+            headerBtn.style.visibility =
+              headerBtn.style.visibility === "" ? "visible" : "";
+          });
+
+          if (isHamburger) {
+            iconGroup.innerHTML = `<path d="M20 20L4 4M20 4L4 20" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round"/>`;
+          } else {
+            iconGroup.innerHTML = `<path d="M5 6H19M5 12H19M5 18H19" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round"/>`;
+          }
+
+          isHamburger = !isHamburger;
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+  const activityImages = document.querySelectorAll(".atividades-container img");
+
+  activityImages.forEach((image) => {
+    image.addEventListener("click", () => {
+      console.log("Imagem clicada:", image); 
+
+      const parentRow = image.closest(".row");
+      if (!parentRow) {
+        console.error("Elemento .row não encontrado para a imagem clicada.");
+        return;
+      }
+
+      const title = parentRow.querySelector("h2");
+      const description = parentRow.querySelector("p");
+
+      if (title && description) {
+        console.log("Título encontrado:", title.textContent); 
+        console.log("Descrição encontrada:", description.textContent);
+
+        if (title.classList.contains("show")) {
+          title.classList.remove("show");
+          title.classList.add("hide");
+          description.classList.remove("show");
+          description.classList.add("hide");
+        } else {
+          title.classList.remove("hide");
+          title.classList.add("show");
+          description.classList.remove("hide");
+          description.classList.add("show");
+        }
+      } else {
+        console.error("Elementos <h2> ou <p> não encontrados na estrutura.");
+      }
+    });
+  });
+});
+      </script>
+    </div>
+    <div class="container container-inscricao">
+      <div class="row">
+        <h1>
+          O VERÃO ESTÁ A CHEGAR E
+           ESTAMOS A PREPARAR UMAS
+            FÉRIAS INESQUECÍVEIS!
+        </h1>
+        <div class="d-flex align-items-right text-container-arrow">
+          <img src="/public/arrow.svg" alt="Arrow" class="me-2" />
+          <h6 class="text-arrow">
+            Diversão, novas amizades e muitas atividades esperam por ti aqui
+          </h6>
+        </div>
+        <div class="d-flex align-items-right text-container-arrow">
+          <a href="login.html">
+            <button id="inscricaoButton" class="btn inscricao-svg"></button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="container abertura-incricoes">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h1>ABERTURA&nbsp;DE<br />INSCRIÇÕES</h1>
+          <div class="buttons-group d-flex gap-3">
+            <button id="regulamento" class="btn"></button>
+            <button id="passosInscricao" class="btn"></button>
+          </div>
+        </div>
+        <div class="col-md-6 text-center">
+          <img
+            src="/public/ImagemDiaAbertura.svg"
+            alt="Abertura de Inscrições"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+
+      <h6>
+        As Férias de Verão de 2025 promovidas pela Câmara Municipal de Viana do
+        Castelo são para crianças/jovens dos 7 aos 18 anos,
+        <span>residentes no concelho de Viana do Castelo.</span>
+      </h6>
+    </div>
+    <div id="atividades" class="container atividades-container">
+      <h1>ATIVIDADES</h1>
+      <div>
+        <div class="row align-items-center my-5">
+          <div class="col-md-6 text-center">
+            <img
+              src="/public/Surf.svg"
+              alt="Canoagem Image"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-md-6">
+            <h2>SURF</h2>
+            <p>
+              O surf é uma atividade desportiva em que se está em perfeita
+              sintonia com a natureza. O objetivo é ficar de pé em cima da
+              prancha para fazer manobras e deslizar sobre a água, explorando
+              assim o máximo potencial das ondas.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="atividades-container-gap canoagem">
+        <div class="row align-items-center my-5">
+          <div class="col-md-6 order-md-1 text-end">
+            <h2 class="atividades-container-h2-alt">CANOAGEM</h2>
+            <p>
+              A canoagem é um desporto náutico, praticado com canoa ou caiaque e
+              é considerada como um dos principais desportos olímpicos. Surgiu
+              na Groelândia, onde canoas eram usadas por esquimós como veículo
+              de pesca e trabalho.
+            </p>
+          </div>
+          <div class="col-md-6 order-md-2 text-center">
+            <img
+              src="/public/Canoagem.svg"
+              alt="Canoagem Image"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="atividades-container-gap vela">
+        <div class="row align-items-center my-5">
+          <div class="col-md-6 text-center">
+            <img src="/public/Vela.svg" alt="Vela Image" class="img-fluid" />
+          </div>
+          <div class="col-md-6">
+            <h2>VELA</h2>
+            <p>
+              A Vela é uma modalidade desportiva náutica, praticada
+              individualmente ou em equipa. Utiliza vários tipos de embarcações
+              que se deslocam na água utilizando a força do vento com a ajuda
+              das velas e a sua correta orientação.
+            </p>
+          </div>
+        </div>
+      </div>
+      <h3>
+        Entre muitas outras! São mais de 100 as atividades diferentes à tua
+        espera.
+      </h3>
+      <div class="atividades-container-btn-container">
+        <a href="atividades.html" class="btn slide-link">Ver Lista Completa</a>
+      </div>
+    </div>
+    <div id="precos" class="container plano-container">
+      <div class="row align-items-center">
+        <div class="col-md-4 desconto2">
+          <h1>Escolhe o teu plano!</h1>
+        </div>
+        <div class="col-md-8">
+          <div
+            class="btn-group btn-group-toggle"
+            role="group"
+            aria-label="Escolha Escalão"
+          >
+            <button
+              type="button"
+              class="btn btn-left active"
+              data-p1="100"
+              data-p2="150"
+              data-p3="200"
+            >
+              Sem escalão
+            </button>
+            <button
+              type="button"
+              class="btn btn-middle"
+              data-p1="50"
+              data-p2="75"
+              data-p3="100"
+            >
+              Escalão A
+            </button>
+            <button
+              type="button"
+              class="btn btn-right"
+              data-p1="70"
+              data-p2="105"
+              data-p3="140"
+            >
+              Escalão B
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-md-4 text-left">
+          <div class="periodo">1º PERÍODO</div>
+          <div class="data">30 de junho a 11 de julho</div>
+          <div class="preco">100€</div>
+        </div>
+        <div class="col-md-4 text-left">
+          <div class="periodo">2º PERÍODO</div>
+          <div class="data">14 de julho a 1 de agosto</div>
+          <div class="preco">150€</div>
+        </div>
+        <div class="col-md-4 text-left">
+          <div class="periodo2">1º e 2º PERÍODO</div>
+          <div class="data">30 de junho a 1 de agosto</div>
+          <div class="preco">200€</div>
+        </div>
+      </div>
+      <div class="row align-items-center" style="margin-top: 5rem">
+        <div class="desconto">
+          <h1>Desconto de períodos:</h1>
+          <p>
+            Ao adquirir dois períodos de férias, terá direito a um desconto
+            especial no valor total, conforme as condições específicas desta
+            promoção.
+          </p>
+          <h1>Desconto de irmãos:</h1>
+          <p>
+            Se inscrever mais que um educando seu, será aplicado um desconto
+            adicional de 15% para ambos, sobre o valor total da compra.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="como-inscrever" class="container instrucoes-container">
+      <h1>Como inscrever?</h1>
+
+      <!-- Imagem para desktop -->
+      <img
+        src="/public/Instrucoes.svg"
+        alt="Passos de Inscrição Desktop"
+        class="img-fluid img-desktop"
+      />
+
+      <div class="instrucoes-text-container">
+        <div class="row">
+          <div class="col-md-4 texto">
+            Criar conta como encarregado de educação na plataforma. Pode fazer o
+            seu registo antes das vagas abrirem.
+          </div>
+          <div class="col-md-4 texto">
+            Adicione os seus educandos indicando corretamente todos os dados que
+            são pedidos num breve formulário.
+          </div>
+          <div class="col-md-4 texto">
+            Por fim, marque as férias dos seus educandos com a escolha dos
+            períodos desejados e respetiva instituição de ensino.
+          </div>
+        </div>
+      </div>
+
+      <div class="img-mobile-container">
+        <div class="step">
+          <img
+            src="/public/mobile_intrucoes1.png"
+            alt="Passo 1"
+            class="img-fluid img-mobile"
+          />
+          <p>
+            Criar conta como encarregado de educação na plataforma. Pode fazer o
+            seu registo antes das vagas abrirem.
+          </p>
+        </div>
+        <div class="step">
+          <img
+            src="/public/mobile_intrucoes2.png"
+            alt="Passo 2"
+            class="img-fluid img-mobile"
+          />
+          <p>
+            Adicione os seus educandos indicando corretamente todos os dados que
+            são pedidos num breve formulário.
+          </p>
+        </div>
+        <div class="step">
+          <img
+            src="/public/mobile_intrucoes3.png"
+            alt="Passo 3"
+            class="img-fluid img-mobile"
+          />
+          <p>
+            Por fim, marque as férias dos seus educandos com a escolha dos
+            períodos desejados e respetiva instituição de ensino.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="escolas" class="container escolas-container">
+      <h1>Escolas</h1>
+      <div class="row">
+        <div class="col-12 d-flex align-items-center escola-row">
+          <div class="flex-grow-1">EB 1 de Monserrate</div>
+          <button
+            class="btn"
+            onclick="window.open('https://maps.app.goo.gl/NifMgHNz4CN8zN6XA', '_blank')"
+          >
+            <img
+              src="/public/EscolasArrow.svg"
+              alt="EB 1 de Monserrate Arrow"
+            />
+          </button>
+        </div>
+        <div class="col-12 d-flex align-items-center escola-row">
+          <div class="flex-grow-1">EB 1 do Carmo</div>
+          <button
+            class="btn"
+            onclick="window.open('https://maps.app.goo.gl/2rpvL26QXcbaf15q9', '_blank')"
+          >
+            <img src="/public/EscolasArrow.svg" alt="EB 1 do Carmo Arrow" />
+          </button>
+        </div>
+        <div class="col-12 d-flex align-items-center escola-row">
+          <div class="flex-grow-1">EB 2/3 Frei Bartolomeu</div>
+          <button
+            class="btn"
+            onclick="window.open('https://maps.app.goo.gl/bBFhjweT6P8mEGLe6', '_blank')"
+          >
+            <img
+              src="/public/EscolasArrow.svg"
+              alt="EB 2/3 Frei Bartolomeu Arrow"
+            />
+          </button>
+        </div>
+        <div class="col-12 d-flex align-items-center escola-row">
+          <div class="flex-grow-1">EB 2/3 Carteado Mena</div>
+          <button
+            class="btn"
+            onclick="window.open('https://maps.app.goo.gl/ibcUfsJ7YRspFKoW8', '_blank')"
+          >
+            <img
+              src="/public/EscolasArrow.svg"
+              alt="EB 2/3 Carteado Mena Arrow"
+            />
+          </button>
+        </div>
+        <div class="col-12 d-flex align-items-center escola-row">
+          <div class="flex-grow-1">EB 1 Foz do Neiva</div>
+          <button
+            class="btn"
+            onclick="window.open('https://maps.app.goo.gl/4XaGZ1rFf8B3zXSe9', '_blank')"
+          >
+            <img src="/public/EscolasArrow.svg" alt="EB 1 Foz do Neiva Arrow" />
+          </button>
+        </div>
+        <div class="col-12 d-flex align-items-center escola-row">
+          <div class="flex-grow-1">EB 2/3 / S Barroselas</div>
+          <button
+            class="btn"
+            onclick="window.open('https://maps.app.goo.gl/PtKhEZN9J5WtaQ6F9', '_blank')"
+          >
+            <img
+              src="/public/EscolasArrow.svg"
+              alt="EB 2/3 / S Barroselas Arrow"
+            />
+          </button>
+        </div>
+        <div class="col-12 d-flex align-items-center escola-row">
+          <div class="flex-grow-1">EB 2/3 / S Lanheses</div>
+          <button
+            class="btn"
+            onclick="window.open('https://maps.app.goo.gl/mj1KvaydQweMDjbK7', '_blank')"
+          >
+            <img
+              src="/public/EscolasArrow.svg"
+              alt="EB 2/3 / S Lanheses Arrow"
+            />
+          </button>
+        </div>
+        <div class="col-12 d-flex align-items-center escola-row">
+          <h6>
+            Faça atempadamente o seu registo e dos seus educandos na plataforma!
+          </h6>
+        </div>
+        <div class="botoes col-12 d-flex">
+          <div class="inscricao-svg2-container">
+            <button id="inscricaoButton2" class="btn inscricao-svg2"></button>
+          </div>
+          <button id="butao-up" class="btn button-up"></button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="tittle-footer">Links úteis</div>
+            <p class="text-footer">Privacidade e Proteção de Dados Pessoais</p>
+            <div class="social-media-icons">
+              <a
+                href="https://www.instagram.com/feriasdeverao_cmvc/"
+                target="_blank"
+              >
+                <button class="btn">
+                  <img src="/public/instagram.svg" alt="Instagram" />
+                </button>
+              </a>
+              <a
+                href="https://www.facebook.com/feriasdeveraocmvc"
+                target="_blank"
+              >
+                <button class="btn">
+                  <img src="/public/facebook.svg" alt="Facebook" />
+                </button>
+              </a>
+              <button class="btn">
+                <img src="/public/envelope.svg" alt="envelope" />
+              </button>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="tittle-footer">Contactos</div>
+            <div class="contact-info">
+              Passeio das Mordomas da Romaria
+              <br />
+              4904-877 Viana do Castelo
+              <div class="fax">F: 258 809 347</div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <img class="ferias" src="/public/ferias.png" alt="ferias" />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      function injectSvg(id, path) {
+        fetch(path)
+          .then((res) => {
+            if (!res.ok) {
+              throw new Error(`HTTP error! status: ${res.status}`);
+            }
+            return res.text();
+          })
+          .then((svg) => {
+            const element = document.getElementById(id);
+            if (element) {
+              element.innerHTML = svg;
+            } else {
+              console.error(`Element with id "${id}" not found.`);
+            }
+          })
+          .catch((err) => console.error("Error fetching SVG:", err));
+      }
+      document.addEventListener("DOMContentLoaded", () => {
+        const headerContainer = document.querySelector(".header-container");
+        const headerPlaceholder = document.querySelector(".header-placeholder");
+        const headerButtonImg = document.querySelector(".header-button");
+        const carousel = document.querySelector("#inicio");
+
+        if (!carousel || !headerButtonImg) {
+          console.error("Required elements not found!");
+          return;
+        }
+
+        const headerObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                headerContainer.classList.remove("carousel-hidden-header");
+                headerPlaceholder.classList.remove(
+                  "carousel-hidden-header-placeholder"
+                );
+              } else {
+                headerContainer.classList.add("carousel-hidden-header");
+                headerPlaceholder.classList.add(
+                  "carousel-hidden-header-placeholder"
+                );
+              }
+            });
+          },
+          { threshold: 0 }
+        );
+
+        headerObserver.observe(carousel);
+
+        const images = document.querySelectorAll(".atividades-container img");
+
+        const imageObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const title = entry.target.closest(".row").querySelector("h2");
+                const body = entry.target.closest(".row").querySelector("p");
+                if (title) {
+                  title.classList.add("slide-in");
+                }
+                if (body) {
+                  body.classList.add("fade-in");
+                }
+              }
+            });
+          },
+          { threshold: 1 }
+        );
+
+        images.forEach((image) => imageObserver.observe(image));
+        injectSvg("regulamento", "/public/Regulamento.svg");
+        injectSvg("passosInscricao", "/public/PassosDeInscricao.svg");
+        injectSvg("inscricaoButton", "/public/FazerInscricao.svg");
+        injectSvg("inscricaoButton2", "/public/FazerInscricao.svg");
+        injectSvg("butao-up", "/public/ButaoUp.svg");
+      });
+
+      const botoes = document.querySelectorAll(".btn-group .btn");
+      const precos = document.querySelectorAll(".preco");
+
+      botoes.forEach((botao) => {
+        botao.addEventListener("click", () => {
+          botoes.forEach((b) => b.classList.remove("active"));
+          botao.classList.add("active");
+
+          const novosPrecos = [
+            botao.getAttribute("data-p1"),
+            botao.getAttribute("data-p2"),
+            botao.getAttribute("data-p3"),
+          ];
+          precos.forEach((precoEl, i) => {
+            precoEl.classList.add("fade");
+
+            setTimeout(() => {
+              precoEl.textContent = `${novosPrecos[i]}€`;
+              precoEl.classList.remove("fade");
+            }, 300);
+          });
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll(".header-btn");
+        const upButton = document.getElementById("butao-up");
+
+        function scrollToSection(sectionId) {
+          const section = document.getElementById(sectionId);
+          if (section) {
+            const offset = -80;
+            const sectionPosition =
+              section.getBoundingClientRect().top + window.scrollY + offset;
+
+            window.scrollTo({
+              top: sectionPosition,
+              behavior: "smooth",
+            });
+          }
+        }
+
+        if (upButton) {
+          upButton.addEventListener("click", () => {
+            scrollToSection("inicio");
+          });
+        }
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const sectionId = button.getAttribute("data-target");
+            scrollToSection(sectionId);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Férias De Verão CMVC</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../src/css/styles-atividades.css" />
+  </head>
+  <body>
+    <div class="header-placeholder"></div>
+    <div
+      class="d-flex align-items-center justify-content-between flex-wrap gap-2 header-container"
+    >
+      <div class="container">
+        <div class="d-flex justify-content-between text-center flex-wrap gap-2">
+          <button class="btn header-btn">INÍCIO</button>
+          <button class="btn header-btn">ATIVIDADES</button>
+          <button class="btn header-btn">PREÇOS</button>
+          <button class="btn header-btn">COMO INSCREVER</button>
+          <button class="btn header-btn">ESCOLAS</button>
+        </div>
+      </div>
+      <button class="header-button btn" onclick="toggleHeaderDisplay()">
+        <svg
+          id="toggleIcon"
+          style="width: 2.75rem; height: 2.75rem"
+          viewBox="0 0 44 44"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="44" height="44" rx="12" fill="#212121" />
+          <g id="icon" transform="translate(10,10)">
+            <path
+              d="M5 6H19M5 12H19M5 18H19"
+              stroke="#FEFEFE"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </g>
+        </svg>
+      </button>
+      <script>
+        let isHamburger = true;
+
+        function toggleHeaderDisplay() {
+          const headerContainer = document.querySelector(".header-container");
+          const headerBtns = document.querySelectorAll(".header-btn");
+          const toggleIcon = document.getElementById("toggleIcon");
+          const iconGroup = document.getElementById("icon");
+
+          if (headerContainer) {
+            headerContainer.style.backgroundColor =
+              headerContainer.style.backgroundColor === "" ? "#212121" : "";
+            headerContainer.style.transition = "background-color 0.5s ease";
+          }
+
+          headerBtns.forEach((headerBtn) => {
+            headerBtn.style.visibility =
+              headerBtn.style.visibility === "" ? "visible" : "";
+          });
+
+          if (isHamburger) {
+            iconGroup.innerHTML = `<path d="M20 20L4 4M20 4L4 20" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round"/>`;
+          } else {
+            iconGroup.innerHTML = `<path d="M5 6H19M5 12H19M5 18H19" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round"/>`;
+          }
+
+          isHamburger = !isHamburger;
+        }
+      </script>
+    </div>
+
+    <div class="container atividades2-container">
+      <div class="row">
+        <div class="col-12 col-md-6 d-flex flex-column">
+          <div>
+            <a href="index.html">
+              <img class="arrow" src="/public/arrow2.png" alt="Voltar" />
+              Voltar
+            </a>
+          </div>
+          <h1>ATIVIDADES</h1>
+        </div>
+      </div>
+      <div class="row flex-md-row row-desportos">
+        <div class="col-12 col-md-9 desportos">
+          <div class="row">
+            <div class="col-6 col-md-3">
+              <div class="desporto" id="andebol">Andebol</div>
+              <div class="desporto" id="atletismo">Atletismo</div>
+              <div class="desporto" id="arco-flecha">Arco e Flecha</div>
+              <div class="desporto" id="badminton">Badminton</div>
+              <div class="desporto" id="basquetebol">Basquetebol</div>
+              <div class="desporto" id="bilhar">Bilhar</div>
+              <div class="desporto" id="boxe">Boxe</div>
+              <div class="desporto" id="canoagem">Canoagem</div>
+              <div class="desporto" id="caminhada-desportiva">Caminhada Desportiva</div>
+              <div class="desporto" id="cross-training">Cross Training</div>
+              <div class="desporto" id="danca">Dança</div>
+              <div class="desporto" id="equitacao">Equitação</div>
+              <div class="desporto" id="escalada">Escalada</div>
+              <div class="desporto" id="futebol">Futebol</div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="desporto" id="futsal">Futsal</div>
+              <div class="desporto" id="ginastica">Ginastica</div>
+              <div class="desporto" id="golf">Golf</div>
+              <div class="desporto" id="hoquei">Hóquei</div>
+              <div class="desporto" id="jiu-jitso">Jiu Jitso</div>
+              <div class="desporto" id="judo">Judo</div>
+              <div class="desporto" id="karate">Karaté</div>
+              <div class="desporto" id="kitesurf">Kitesurf</div>
+              <div class="desporto" id="natacao">Natação</div>
+              <div class="desporto" id="padel">Padel</div>
+              <div class="desporto" id="patinagem">Patinagem</div>
+              <div class="desporto" id="pilates">Pilates</div>
+              <div class="desporto" id="ping-pong">Ping Pong</div>
+              <div class="desporto" id="polo-aquatico">Polo Aquático</div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="desporto" id="rugby">Rugby</div>
+              <div class="desporto" id="skate">Skate</div>
+              <div class="desporto" id="stand-up-paddle">Stand Up Paddle</div>
+              <div class="desporto" id="surf">Surf</div>
+              <div class="desporto" id="tenis">Ténis</div>
+              <div class="desporto" id="vela">Vela</div>
+              <div class="desporto" id="voleibol">Voleibol</div>
+              <div class="desporto selected" id="windsurf">Windsurf</div>
+              <div class="desporto" id="yoga">Yoga</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 desportos-img">
+          <div>
+            <img
+              class="img-desporto"
+              id="img-desporto"
+              src="/public/windsurf.png"
+              alt="windsurf"
+            />
+            <div class="titulo-desporto" id="titulo-desporto">Windsurf</div>
+            <div class="texto-desporto" id="texto-desporto">
+              O windsurf é um desporto aquático em que o atleta progride através da
+              água em cima de uma prancha dotada de uma vela movida pelo vento e pela
+              força das ondas.
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        const desportosInfo = {
+          futebol: {
+            img: "/public/futebol.jpg",
+            titulo: "Futebol",
+            texto:
+              "O futebol é um desporto coletivo em que duas equipas competem para marcar golos, conduzindo a bola com os pés, cabeça ou corpo. É praticado num campo relvado e exige trabalho em equipa, estratégia e resistência física.",
+          },
+          atletismo: {
+            img: "/public/atletismo.png",
+            titulo: "Atletismo",
+            texto:
+              "Inclui corrida, salto, lançamento e mais. Ideal para resistência e técnica.",
+          },
+          "arco-flecha": {
+            img: "/public/arco-flecha.png",
+            titulo: "Arco e Flecha",
+            texto:
+              "Exige precisão, controle e concentração. Ótimo para todas as idades.",
+          },
+          windsurf: {
+            img: "/public/windsurf.png",
+            titulo: "Windsurf",
+            texto:
+              "Esporte aquático com prancha e vela, onde o vento é seu motor.",
+          },
+          volei: {
+            img: "/public/volei.png",
+            titulo: "Voleibol",
+            texto:
+              "Trabalho em equipe, reflexos rápidos e cooperação constante.",
+          },
+          yoga: {
+            img: "/public/yoga.png",
+            titulo: "Yoga",
+            texto:
+              "Técnicas de respiração, postura e relaxamento para corpo e mente.",
+          },
+          dança: {
+            img: "/public/danca.png",
+            titulo: "Dança",
+            texto:
+              "Movimento, ritmo e expressão corporal combinados para diversão.",
+          },
+          andebol: {
+            img: "/public/andebol.jpeg",
+            titulo: "Andebol",
+            texto:
+              "O andebol é um desporto coletivo jogado com as mãos, onde duas equipas competem para marcar golos numa baliza adversária. É praticado num campo coberto e exige agilidade, coordenação e espírito de equipa para rápidas trocas de passe e arremessos precisos.",
+          },
+          windsurf: {
+            img: "/public/windsurf.png",
+            titulo: "Windsurf",
+            texto:
+              "O windsurf é um desporto aquático em que o atleta progride através da água em cima de uma prancha dotada de uma vela movida pelo vento e pela força das ondas.",
+          },
+        };
+
+        const opcoes = document.querySelectorAll(".desporto");
+        opcoes.forEach((opcao) => {
+          opcao.addEventListener("click", () => {
+            opcoes.forEach((o) => o.classList.remove("selected"));
+            opcao.classList.add("selected");
+
+            const id = opcao.id;
+            const info = desportosInfo[id];
+
+            if (info) {
+              document.getElementById("img-desporto").src = info.img;
+              document.getElementById("img-desporto").alt = info.titulo;
+              document.getElementById("titulo-desporto").textContent =
+                info.titulo;
+              document.getElementById("texto-desporto").textContent =
+                info.texto;
+            }
+          });
+        });
+      </script>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

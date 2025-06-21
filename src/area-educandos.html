@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Área Educandos - Férias De Verão CMVC</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../src/css/styles-area-educandos.css" />
+  </head>
+  <body>
+    <div
+      class="container mini-header d-flex justify-content-between align-items-center"
+    >
+      <div>Bem vindo, Sandro!</div>
+      <a href="index.html">
+        <img src="/public/Sign-Out.svg" alt="Sign Out" />
+      </a>
+    </div>
+    <div class="row flex-container">
+      <div class="container total-preco">
+        <div class="total-preco-container">
+          <h2>Resumo</h2>
+          <div id="resumo-detalhes">
+            <p id="resumo-vazio">Nenhum período selecionado.</p>
+          </div>
+          <div class="linha-preco">
+            <div class="info-preco">
+              <h3 class="mb-0">Total</h3>
+              <h3 class="preco mb-0" id="resumo-total">0€</h3>
+            </div>
+            <button type="button" class="btn botao">
+              <img src="/public/avancar_pagamento.png" alt="Avançar Pagamento" />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="educandos-container">
+        <h1>Os meus educandos</h1>
+        <h6 id="educandos-info">
+          <img src="/public/i.svg" alt="Educandos Icon" />
+          Ainda não registou os seus educandos.
+        </h6>
+        <div id="form-container" class="d-none"></div>
+        <div id="cards-container" style="display: none"></div>
+
+        <div id="ferias-container" class="d-none">
+          <div class="ferias-content">
+            <button class="close-container">&times;</button>
+            <div class="ferias-body">
+              <div class="school-row">
+                <div class="school-card text-center justify-content-center">
+                  <div class="ferias-header">
+                    <h5>1º período: 30/junho a 11/julho / 100€</h5>
+                    <h5>2º período: 14/julho a 1/agosto / 150€</h5>
+                  </div>
+                </div>
+                <div class="school-card">
+                  <img src="/public/eb_1_abelheira.png" alt="EB 1 da Abelheira">
+                  <h6>EB 1 da Abelheira</h6>
+                  <div class="period-buttons">
+                    <button>1º período</button>
+                    <button>2º período</button>
+                    <button>1º e 2º períodos</button>
+                  </div>
+                </div>
+                <div class="school-card">
+                  <img src="/public/eb_1_monserrate.png" alt="EB 1 de Monserrate">
+                  <h6>EB 1 de Monserrate</h6>
+                  <div class="period-buttons">
+                    <button>1º período</button>
+                    <button>2º período</button>
+                    <button>1º e 2º períodos</button>
+                  </div>
+                </div>
+                <div class="school-card">
+                  <img src="/public/eb_1_carmo.png" alt="EB 1 do Carmo">
+                  <h6>EB 1 do Carmo</h6>
+                  <div class="period-buttons">
+                    <button>1º período</button>
+                    <button>2º período</button>
+                    <button>1º e 2º períodos</button>
+                  </div>
+                </div>
+                <div class="school-card">
+                  <img src="/public/eb_2-3_castelo_neiva.png" alt="EB 2/3 de Castelo de Neiva">
+                  <h6>EB 2/3 de Castelo de Neiva</h6>
+                  <div class="period-buttons">
+                    <button>1º período</button>
+                    <button>2º período</button>
+                    <button>1º e 2º períodos</button>
+                  </div>
+                </div>
+                <div class="school-card">
+                  <img src="/public/eb_2-3_barroselas.png" alt="EB 2/3 de Barroselas">
+                  <h6>EB 2/3 de Barroselas</h6>
+                  <div class="period-buttons">
+                    <button>1º período</button>
+                    <button>2º período</button>
+                    <button>1º e 2º períodos</button>
+                  </div>
+                </div>
+                <div class="school-card">
+                  <img src="/public/eb_2-3_carteado_mena.png" alt="EB 2/3 Carteado Mena">
+                  <h6>EB 2/3 Carteado Mena</h6>
+                  <div class="period-buttons">
+                    <button>1º período</button>
+                    <button>2º período</button>
+                    <button>1º e 2º períodos</button>
+                  </div>
+                </div>
+                <div class="school-card">
+                  <img src="/public/eb_2-3_pedro_barbosa.png" alt="EB 2/3 Pedro Barbosa">
+                  <h6>EB 2/3 Pedro Barbosa</h6>
+                  <div class="period-buttons">
+                    <button>1º período</button>
+                    <button>2º período</button>
+                    <button>1º e 2º períodos</button>
+                  </div>
+                </div>
+                <div class="school-card">
+                  <img src="/public/eb_2-3_abelheira.png" alt="EB 2/3 da Abelheira">
+                  <h6>EB 2/3 da Abelheira</h6>
+                  <div class="period-buttons">
+                    <button>1º período</button>
+                    <button>2º período</button>
+                    <button>1º e 2º períodos</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" id="adicionar-educando" class="btn">
+          Adicionar Educando
+        </button>
+        
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function injectSvg(id, path) {
+        fetch(path)
+          .then((res) => {
+            if (!res.ok) {
+              throw new Error(`HTTP error! status: ${res.status}`);
+            }
+            return res.text();
+          })
+          .then((svg) => {
+            const element = document.getElementById(id);
+            if (element) {
+              element.innerHTML = svg;
+            } else {
+              console.error(`Element with id "${id}" not found.`);
+            }
+          })
+          .catch((err) => console.error("Error fetching SVG:", err));
+      }
+
+      document
+        .getElementById("adicionar-educando")
+        .addEventListener("click", () => {
+          const infoText = document.getElementById("educandos-info");
+          const formContainer = document.getElementById("form-container");
+          const cardsContainer = document.getElementById("cards-container");
+
+          infoText.classList.add("d-none");
+
+          formContainer.innerHTML = `
+          <div class="card p-3" style="max-height: 700px; overflow-y: auto;">
+            <h5>Dados do Educando</h5>
+      <form>
+              <div class="mb-3">
+          <input type="text" class="form-control" id="nomeCompleto" placeholder="Nome Completo"/>
+              </div>
+              <div class="mb-3">
+          <input type="text" class="form-control" id="alcunha" placeholder="Alcunha"/>
+              </div>
+              <div class="mb-3">
+          <input type="text" class="form-control" id="nif" placeholder="Nº contribuinte (NIF)"/>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="dataNascimento" placeholder="Data de Nascimento"/>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="escola" placeholder="Escola que frequenta"/>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="anoTurma" placeholder="Ano e turma que frequenta"/>
+        </div>
+        <div class="mb-3">
+          <div class="custom-select-container">
+            <select id="escalãoSelect" class="form-select">
+              <option value="A">Escalão A</option>
+              <option value="B">Escalão B</option>
+              <option value="Sem">Sem escalão</option>
+            </select>
+            <div class="custom-radio-button"></div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="input-with-radio">
+            <input type="text" class="form-control" id="problemaSaude" placeholder="Problemas de saúde?" />
+            <input type="radio" id="problemaSaudeRadio" name="problemaSaude" />
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="input-with-radio">
+            <input type="text" class="form-control" id="intolerancia" placeholder="Intolerâncias Alimentares?" />
+            <input type="radio" id="intoleranciaRadio" name="intolerancia" />
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="photo-upload-container">
+            <input type="file" class="form-control" id="foto" placeholder="Adicionar foto (facultativo)"/>
+            <img src="/public/image.png" alt="Foto Icon" class="photo-icon" />
+          </div>
+        </div>
+        <div class="mb-3">
+          <textarea
+            id="observacoes"
+            class="form-control"
+            rows="3"
+            placeholder="Observações:
+
+
+Alergia a espinafres e grão-de-bico, ..."
+          ></textarea>
+        </div>
+        <div class="button-group">
+        <button type="button" class="btn btn-light botao3" id="cancelar">Cancelar</button>
+        <button type="submit" class="btn btn-dark botao3" >Registar</button>
+        </div>
+      </form>
+    </div>
+  `;
+          formContainer.classList.remove("d-none");
+
+          document.getElementById("cancelar").addEventListener("click", () => {
+            formContainer.innerHTML = "";
+            formContainer.classList.add("d-none");
+            if (cardsContainer.children.length === 0) {
+              infoText.classList.remove("d-none");
+            }
+          });
+
+          document
+            .getElementById("form-container")
+            .addEventListener("submit", (e) => {
+              console.log("Form submitted");
+              e.preventDefault();
+
+              const nomeCompleto =
+                document.getElementById("nomeCompleto").value;
+              const alcunha = document.getElementById("alcunha").value;
+              const nif = document.getElementById("nif").value;
+              const dataNascimento = document.getElementById("dataNascimento").value;
+              const anoTurma = document.getElementById("anoTurma").value;
+              const escola = document.getElementById("escola").value;
+              cardsContainer.insertAdjacentHTML(
+                "beforeend",
+                `
+                <div class="cardG">
+                  <div class="row g-0">
+                    <div class="col-md-4 d-flex align-items-stretch">
+                      <img src="/public/ines.svg" class="img-fluid rounded-start" alt="Foto do Educando">
+                    </div>
+                    <div class="col-md-8 d-flex align-items-stretch">
+                      <div class="card-body d-flex flex-column justify-content-center">
+                        <h6>Nome</h6>
+                        <p>${nomeCompleto}</p>
+                        <button type="button" class="botao2 marcar-ferias">
+                          <img class="marcar_ferias" src="/public/marcar_ferias.png" alt="Marcar Férias">
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-details d-none">
+                    <div class="info-row">
+                      <div class="info-item">
+                        <p>NIF</p>
+                        <h6>${nif}</h6>
+                      </div>
+                      <div class="info-item align-right">
+                        <p>Data de nascimento</p>
+                        <h6>${dataNascimento}</h6>
+                      </div>
+                    </div>
+
+                    <div class="info-row">
+                      <div class="info-item">
+                        <p>Escola que frequenta</p>
+                        <h6>${escola}</h6>
+                      </div>
+                      <div class="info-item align-right">
+                        <p>Ano e turma que frequenta</p>
+                        <h6>${anoTurma}</h6>
+                      </div>
+                    </div>
+
+                    <div class="button-group">
+                      <button type="button" class="btn btn-light editar-dados">Editar dados</button>
+                      <button type="button" class="btn btn-dark alterar-ferias align-button-right">Alterar férias</button>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                `
+              );
+
+              document.addEventListener('DOMContentLoaded', function () {
+    const marcarFeriasButtons = document.querySelectorAll('.marcar-ferias');
+    const feriasContainer = document.getElementById('ferias-container');
+
+    marcarFeriasButtons.forEach((button) => {
+      button.addEventListener('click', function () {
+        // Verifica se está em mobile (tela <= 768px)
+        if (window.innerWidth <= 768) {
+          // Garante que o ferias-container está visível
+          feriasContainer.classList.remove('d-none');
+
+          // Remove o ferias-container de onde estiver
+          feriasContainer.remove();
+
+          // Encontra o card pai do botão clicado
+          const card = button.closest('.cardG');
+
+          // Verifica se já existe um ferias-container nesse card
+          const existing = card.querySelector('#ferias-container');
+          if (existing) existing.remove();
+
+          // Insere o ferias-container dentro do card
+          card.appendChild(feriasContainer);
+
+          // Adiciona a classe 'expanded' ao card para expandi-lo
+          card.classList.add('expanded');
+
+          // Adiciona a classe 'selecionado' ao card
+          card.classList.add('selecionado');
+        }
+      });
+    });
+
+    // Botão de fechar
+    const closeButton = document.querySelector('.close-container');
+    if (closeButton) {
+      closeButton.addEventListener('click', () => {
+        feriasContainer.classList.add('d-none');
+        
+        // Remove a classe 'expanded' quando fechar
+        const card = closeButton.closest('.cardG');
+        if (card) {
+          card.classList.remove('expanded');
+          card.classList.remove('selecionado'); // Remove a seleção
+        }
+      });
+    }
+  });
+
+              const botoesMarcarFerias = document.querySelectorAll(".marcar-ferias");
+              botoesMarcarFerias.forEach((botao, index) => {
+                botao.addEventListener("click", () => {
+                  console.log(`Botão 'Marcar férias' clicado para o educando ${index + 1}`);
+                  const feriasContainer = document.getElementById("ferias-container");
+                  feriasContainer.classList.remove("d-none"); 
+                  feriasContainer.scrollIntoView({ behavior: "smooth" });
+                });
+              });
+
+          document.querySelector("#ferias-container .close-container").addEventListener("click", () => {
+          console.log("Botão de fechar clicado"); 
+          document.getElementById("ferias-container").classList.add("d-none");
+        });
+
+              infoText.classList.add("d-none");
+              cardsContainer.style.display = "grid";
+
+              formContainer.innerHTML = "";
+              formContainer.classList.add("d-none");
+            });
+        });
+
+        
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const cookiesAccepted = localStorage.getItem("cookiesAccepted");
+
+        if (!cookiesAccepted) {
+          const modalHTML = `
+            <div
+              class="modal fade d-flex justify-content-center align-items-center"
+              id="cookieconsent"
+              tabindex="-1"
+              aria-labelledby="cookieconsentLabel"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content d-block text-start">
+                  <div class="modal-body">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input rounded-circle"
+                        type="checkbox"
+                        id="Autorizacao"
+                      />
+                      <label class="form-check-label" for="necessary">
+                        <p>
+                          Autorizo o(s) meu(s) educando(s), sem prejuízo do direito à
+                          honra e à intimidade, ser(em) fotografado(s) e/ou filmado(s)
+                          nas atividades desenvolvidas pela entidade organizadora,
+                          podendo as imagens em atividades, ações promocionais e/ou de
+                          divulgação dos serviços e eventos da referida entidade,
+                          incluindo através do seu site oficial e redes sociais.
+                        </p>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input rounded-circle"
+                        type="checkbox"
+                        id="Regulamento"
+                      />
+                      <label class="form-check-label" for="Regulamento">
+                        <p>* Li e aceito o <a>Regulamento</a></p>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input rounded-circle"
+                        type="checkbox"
+                        id="PoliticasPrivacidade"
+                      />
+                      <label class="form-check-label" for="PoliticasPrivacidade">
+                        <p>
+                          * Li tomei conhecimento da<a>
+                            Política de Privacidade e Proteção de Dados do Município de
+                            Viana do Castelo</a
+                          >
+                        </p>
+                      </label>
+                    </div>
+                    <p class="obrigatorio">* Campos de preenchimento obrigatório</p>
+                  </div>
+                  <div class="d-flex justify-content-center p-3">
+                    <button
+                      type="button"
+                      id="confirmButton"
+                      class="btn confirmButton"
+                      disabled
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+          document.body.insertAdjacentHTML("beforeend", modalHTML);
+
+          const modal = new bootstrap.Modal(
+            document.getElementById("cookieconsent")
+          );
+          const confirmButton = document.getElementById("confirmButton");
+          const Autorizacao = document.getElementById("Autorizacao");
+          const Regulamento = document.getElementById("Regulamento");
+          const PoliticasPrivacidade = document.getElementById(
+            "PoliticasPrivacidade"
+          );
+
+          function updateConfirmButtonState() {
+            if (Regulamento.checked && PoliticasPrivacidade.checked) {
+              confirmButton.disabled = false;
+              confirmButton.style.color = "#212121";
+            } else {
+              confirmButton.disabled = true;
+              confirmButton.style.color = "#C2C2C2";
+            }
+          }
+
+          Regulamento.addEventListener("change", updateConfirmButtonState);
+          PoliticasPrivacidade.addEventListener(
+            "change",
+            updateConfirmButtonState
+          );
+
+          confirmButton.addEventListener("click", () => {
+            localStorage.setItem("cookiesAccepted", "all");
+            if (Autorizacao.checked) {
+              localStorage.setItem("photoAuthorization", "true");
+            } else {
+              localStorage.setItem("photoAuthorization", "false");
+            }
+            modal.hide();
+            const modalElement = document.getElementById("cookieconsent");
+            modalElement.addEventListener("hidden.bs.modal", () => {
+              modalElement.remove();
+            });
+          });
+
+          modal.show();
+        }
+      });
+
+      injectSvg("adicionar-educando", "/public/AdicionarEducando.svg");
+      injectSvg("confirmButton", "/public/ConfirmButton.svg");
+
+
+      document.addEventListener("DOMContentLoaded", () => {
+      const marcarFeriasButton = document.getElementById("marcar_ferias");
+      if (marcarFeriasButton) {
+        marcarFeriasButton.addEventListener("click", () => {
+          console.log("Botão 'Marcar férias' clicado");
+          document.getElementById("modal-ferias").classList.remove("d-none");
+        });
+      } else {
+        console.error("Elemento com ID 'marcar_ferias' não encontrado.");
+      }
+
+  const closeModalButton = document.querySelector(".close-modal");
+  if (closeModalButton) {
+    closeModalButton.addEventListener("click", () => {
+      console.log("Botão de fechar modal clicado");
+      document.getElementById("modal-ferias").classList.add("d-none");
+    });
+  } else {
+    console.error("Elemento com classe 'close-modal' não encontrado.");
+  }
+});
+
+document.addEventListener("click", (event) => {
+  if (event.target.closest(".marcar-ferias")) {
+    const botao = event.target.closest(".marcar-ferias");
+    console.log("Botão 'Marcar Férias' clicado");
+    const cards = document.querySelectorAll(".cardG");
+    cards.forEach((card) => {
+      card.classList.add("apagado");
+      card.classList.remove("selecionado");
+    });
+    const cardAtual = botao.closest(".cardG");
+    if (cardAtual) {
+      cardAtual.classList.add("selecionado");
+      cardAtual.classList.remove("apagado");
+
+      // Tornar visível o card-details
+      const cardDetails = cardAtual.querySelector(".card-details");
+      if (cardDetails) {
+        cardDetails.classList.remove("d-none");
+      }
+    } else {
+      console.error("Card correspondente não encontrado.");
+    }
+  }
+
+  if (event.target.closest(".close-container")) {
+    console.log("Botão de fechar clicado");
+    const cards = document.querySelectorAll(".cardG");
+    cards.forEach((card) => {
+      card.classList.remove("apagado", "selecionado");
+
+      // Ocultar o card-details
+      const cardDetails = card.querySelector(".card-details");
+      if (cardDetails) {
+        cardDetails.classList.add("d-none");
+      }
+    });
+  }
+
+  // Alternar visibilidade ao clicar no card novamente
+  if (event.target.closest(".cardG")) {
+    const card = event.target.closest(".cardG");
+    const cardDetails = card.querySelector(".card-details");
+    if (cardDetails) {
+      cardDetails.classList.toggle("d-none");
+    }
+  }
+});
+
+
+
+function atualizarResumo(nomeEducando, nomeEscola, periodo, preco) {
+  const resumoDetalhes = document.getElementById("resumo-detalhes");
+  const resumoVazio = document.getElementById("resumo-vazio");
+  const resumoTotal = document.getElementById("resumo-total");
+  if (resumoVazio) {
+    resumoVazio.remove();
+  }
+
+  let educandoGroup = document.querySelector(`[data-educando="${nomeEducando}"]`);
+  if (!educandoGroup) {
+    resumoDetalhes.insertAdjacentHTML(
+      "beforeend",
+      `
+      <div class="resumo-educando" data-educando="${nomeEducando}">
+        <h5>${nomeEducando}</h5>
+        <div class="resumo-itens"></div>
+        <p class="educando-total">Total: <span class="educando-total-valor">0€</span></p>
+      </div>
+      `
+    );
+    educandoGroup = document.querySelector(`[data-educando="${nomeEducando}"]`);
+  }
+
+  const resumoItens = educandoGroup.querySelector(".resumo-itens");
+  resumoItens.insertAdjacentHTML(
+    "beforeend",
+    `
+    <div class="resumo-item">
+      <p>${periodo} - ${nomeEscola}</p>
+      <p>${preco}€</p>
+    </div>
+    `
+  );
+
+  const educandoTotal = educandoGroup.querySelector(".educando-total-valor");
+  const totalAtualEducando = parseInt(educandoTotal.textContent.replace("€", "")) || 0;
+  const novoTotalEducando = totalAtualEducando + preco;
+  educandoTotal.textContent = `${novoTotalEducando}€`;
+  const totalAtual = parseInt(resumoTotal.textContent.replace("€", "")) || 0;
+  const novoTotal = totalAtual + preco;
+  resumoTotal.textContent = `${novoTotal}€`;
+
+  let desconto = 0;
+  if (periodo === "1º e 2º períodos") {
+    desconto = 50;
+  }
+
+  const totalComDesconto = novoTotal - desconto;
+  resumoTotal.textContent = `${totalComDesconto}€`;
+
+  const resumoContainer = document.querySelector(".total-preco-container");
+  if (!document.getElementById("resumo-desconto")) {
+    resumoContainer.insertAdjacentHTML(
+      "beforeend",
+      `
+      <div id="resumo-desconto" class="linha-preco">
+        <div class="info-preco">
+          <h3 class="mb-0">Desconto</h3>
+          <h3 class="preco mb-0">${desconto}€</h3>
+        </div>
+      </div>
+      <div id="metodo-pagamento" class="linha-preco">
+        <h3 class="mb-3">Método de pagamento</h3>
+        <div class="metodo-opcoes">
+          <label>
+            <img class="mbway" src="/public/mbway.png" alt="MB WAY" />
+            <input type="radio" name="metodoPagamento" value="MB WAY" />
+          </label>
+          <label>
+            <img class="multibanco" src="/public/multibanco.png" alt="MULTIBANCO" />
+            <input type="radio" name="metodoPagamento" value="MULTIBANCO" />
+          </label>
+          <label>
+            <img class="parcelas" src="/public/parcelas.png" alt="Duas prestações" />
+            <span>Pagamento em duas prestações</span>
+            <input type="radio" name="metodoPagamento" value="Duas prestações" />
+          </label>
+        </div>
+        <button type="button" class="btn btn-primary mt-3" id="confirmar-pagamento">Confirmar</button>
+      </div>
+      `
+    );
+
+    document
+      .getElementById("confirmar-pagamento")
+      .addEventListener("click", () => {
+        const metodoSelecionado = document.querySelector(
+          'input[name="metodoPagamento"]:checked'
+        );
+        if (metodoSelecionado) {
+          const metodo = metodoSelecionado.value;
+
+          if (metodo === "MB WAY") {
+            window.location.href = "pagamento.html";
+          } else if (metodo === "MULTIBANCO") {
+            window.location.href = "pagamento2.html";
+          } else if (metodo === "Duas prestações") {
+            window.location.href = "parcelas.html";
+          }
+        } else {
+          alert("Por favor, selecione um método de pagamento.");
+        }
+      });
+  } else {
+    document.querySelector("#resumo-desconto .preco").textContent = `-${desconto}€`;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("JavaScript carregado!");
+
+  const botoes = document.querySelectorAll(".period-buttons button");
+  console.log("Botões encontrados:", botoes.length);
+
+  botoes.forEach((botao) => {
+    botao.addEventListener("click", () => {
+      console.log("Botão clicado:", botao.textContent); 
+
+      const escola = botao.closest(".school-card").querySelector("h6").textContent;
+      const periodo = botao.textContent;
+      const nomeEducando = document.querySelector(".cardG .card-body p")?.textContent;
+
+      if (!nomeEducando) {
+        alert("Por favor, registre um educando antes de selecionar um período.");
+        return;
+      }
+
+      let preco = 0;
+      if (periodo === "1º período") preco = 100;
+      else if (periodo === "2º período") preco = 150;
+      else if (periodo === "1º e 2º períodos") preco = 250;
+
+      console.log(`Escola: ${escola}, Período: ${periodo}, Nome do Educando: ${nomeEducando}, Preço: ${preco}€`);
+
+      atualizarResumo(nomeEducando, escola, periodo, preco);
+
+      const cards = document.querySelectorAll(".cardG");
+      let botaoMarcarFeriasEncontrado = false;
+
+      cards.forEach((card) => {
+        const nomeNoCard = card.querySelector(".card-body p")?.textContent;
+        if (nomeNoCard === nomeEducando) {
+          const botaoMarcarFerias = card.querySelector(".marcar-ferias");
+          if (botaoMarcarFerias) {
+            botaoMarcarFerias.outerHTML = `
+            <p class="periodo-selecionado">
+                ${periodo} - ${escola}
+              </p>`;
+            botaoMarcarFeriasEncontrado = true;
+          }
+        }
+      });
+
+      if (!botaoMarcarFeriasEncontrado) {
+        console.error(`Botão 'Marcar férias' não encontrado para o educando: ${nomeEducando}`);
+      }
+    });
+  });
+});
+    </script>
+  </body>
+</html>
